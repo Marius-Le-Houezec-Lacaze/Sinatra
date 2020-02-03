@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+  <body>
+  <div class="box">
+    <h1>Mon super site de gossip, depuis le dossier views !</h1>
+     <a href="/gossips/new/">Creer un nouveaux gossip</a>
+     <table allign="center" style="width:75%">
+       <tr>
+        <th><strong>Id</th>
+        <th>Author</th>
+        <th>Content</th>
+        <th>Option</th>
+      </tr>
+      <% i = 0%>
+      <% gossips.each do |gossip, index| %>
+         <tr>
+              <td><%= i += 1%></td>
+             <td><%= gossip.author %></td>
+             <td><%= gossip.content %></td>
+             <td><a href="gossips/<%=i%>">voir ce gossip</a> </td>
+             
+         </tr>
+       <% end %>
+     </table>
+     </div>
+  </body>
+</html>
