@@ -8,12 +8,14 @@ class Gossip
     @author = author
   end
 
+  # Cette fonction Sauvegarde le gossip initializer au decu
   def save
     CSV.open("db/gossip.csv", "ab") do |row|
       row << [@author, @content]
     end
   end
 
+  # Cette fonction retourne une array de tout les gossip
   def self.all
     all_gossips = []
     CSV.read("./db/gossip.csv").each do |csv_line|
@@ -22,6 +24,7 @@ class Gossip
     return all_gossips
   end
 
+  # Cette fonction permet de modifier un gossip
   def self.update(author, content, i)
     arr = []
     self.all.each_with_index do |item, index|
@@ -41,6 +44,7 @@ class Gossip
     end
   end
 
+  # Cette fonction permet de trouver un gossip pars son id
   def self.find(id)
     self.all.each_with_index do |item, index|
       if index + 1 == id.to_i
