@@ -1,7 +1,7 @@
 # Sinatra
 
 ## Pour lancer le site
-<code>rackup -p 4645</code>
+<code>shotgun -p 4645</code>
 
 ## Pour Visiter le site
 <code>localhost:4645</code>
