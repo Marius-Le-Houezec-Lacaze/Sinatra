@@ -1,6 +1,8 @@
 # Sinatra
 
 ## Pour lancer le site
+<code>git clone https://github.com/MariusLHL/Sinatra.git</code>
+<code>cd Sinatra</code>
 <code>shotgun -p 4645</code>
 
 ## Pour Visiter le site
