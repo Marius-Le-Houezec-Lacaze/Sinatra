@@ -24,12 +24,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/gossips/:id/' do
-    Comment.new(params['id'],params["comment_content"]).save
+    Comment.new(params['id'],params["comment_content"], params["comment_author"]).save
     redirect '/gossips/' + params['id']
   end
 
   get '/gossips/:id/edit/' do
-    erb :edit, locals: {id: params['id']}
+    erb :edit, locals: {id: params['id'], gossips: Gossip.find(params['id'])}
   end
 
   post '/gossips/:id/edit/' do

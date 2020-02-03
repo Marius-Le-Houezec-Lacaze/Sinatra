@@ -26,8 +26,8 @@ class Gossip
     arr = []
     self.all.each_with_index do |item, index|
       if(i.to_i == index + 1)
-        item.author = author
-        item.content = content
+        item.author = author.to_s if author != ""
+        item.content = content.to_s if author != ""
       end
       arr << [item.author, item.content]
     end

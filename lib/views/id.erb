@@ -1,22 +1,28 @@
 <html>
   <head>
     <title>The Gossip Project</title>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
   </head>
   <body>
-    <h1> ton potin</h1>
-    <% gossips.each do |gossip| %>
-      <p><%= gossip %></p>
-      
-      <%end%>
-    </form>
+     <div class="box">
+    <h1> Potin numero #<%=id%></h1>
+    
+      <h4><%= gossips[0] %></h4>
+      <p><%= gossips[1] %></p>
+
     <a href="/gossips/<%=id%>/edit/">editer ce potin</a>
     <a href="/">Retour a l'acceuil<a>
     <form action='/gossips/<%=id%>/' method='POST'>
-        <input type='text' name='comment_content'/>
-        <input type='submit'/>
+        <input type='text' name='comment_author' value ="Nom de l'auteur"required/> 
+        <textarea type='text' value="" name='comment_content'required>Contenu du commentaire</textarea>
+        <input type='submit' value="Ajouter un commentaire"/>
     </form>
+    <h2>Commentaire</h2>
+    <hr>
     <% comments.each do |comm|%>
-      <p><%= comm%></p>
+      <p><strong><%= comm[1]%></strong>: <%= comm[0]%></p>
+      <hr>
       <%end%>
+      </div>
   </body>
 </html>

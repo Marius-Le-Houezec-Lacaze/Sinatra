@@ -1,13 +1,17 @@
 <html>
   <head>
     <title>The Gossip Project</title>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
   </head>
   <body>
-    <h1>Modifier un potin</h1>
-    <form action='/gossips/<%=id%>/edit/' method='POST'>
-    <input type='text' name='gossip_author'/>
-    <input type='text' name='gossip_content'/>
-    <input type='submit'/>
-    </form>
+    <div class="box">
+      <h1>Modifier un potin</h1>
+     
+      <form action='/gossips/<%=id%>/edit/' method='POST'>
+        <input type='text' name='gossip_author' value="<%= gossips[0]%>" required/>
+        <textarea class="large"type='' name='gossip_content' required><%= gossips[1]%></textarea>
+        <input type='submit' value="Sauvegarder les changement"/>
+      </form>
+    </div>
   </body>
 </html>

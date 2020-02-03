@@ -5,8 +5,8 @@
   </head>
   <body>
   <div class="box">
-    <h1>Mon super site de gossip, depuis le dossier views !</h1>
-     <a href="/gossips/new/">Creer un nouveaux gossip</a>
+    <h1>Le super site , super secret de gossip!</h1>
+     <a class="button" href="/gossips/new/">Creer un nouveaux gossip</a>
      <table allign="center" style="width:75%">
        <tr>
         <th><strong>Id</th>
@@ -17,10 +17,10 @@
       <% i = 0%>
       <% gossips.each do |gossip, index| %>
          <tr>
-              <td><%= i += 1%></td>
+              <td class="center"><%= i += 1%></td>
              <td><%= gossip.author %></td>
              <td><%= gossip.content %></td>
-             <td><a href="gossips/<%=i%>">voir ce gossip</a> </td>
+             <td class="center"><a href="gossips/<%=i%>">voir ce gossip</a> </td>
              
          </tr>
        <% end %>

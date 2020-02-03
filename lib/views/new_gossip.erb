@@ -1,13 +1,17 @@
 <html>
   <head>
     <title>The Gossip Project</title>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
   </head>
   <body>
+  <div class="box">
     <h1>Rajouter un potin</h1>
+    <a href="/">Retour a l'acceuil<a>
     <form action='/gossips/new/' method='POST'>
-    <input type='text' name='gossip_author'/>
-    <input type='text' name='gossip_content'/>
-    <input type='submit'/>
+    <input type='text' name='gossip_author'value="Auteur du nouveaux potin"required/>
+    <textarea type='text' name='gossip_content' required>Contenu du nouveaux potin</textarea>
+    <input type='submit'value="Rajouter le potin"/>
     </form>
+    </div>
   </body>
 </html>

@@ -2,23 +2,23 @@ require_relative 'gossip'
 
 
 class Comment
-  attr_accessor :content, :id, :time
-  def initialize(id, content)
+  attr_accessor :content, :id, :author
+  def initialize(id, content, author)
     @id = id.to_i
     @content = content
-    @time = Time.now
+    @author = author
   end
 
   def save
     CSV.open("db/comment.csv", "ab") do |row|
-      row << [@id, @content, @time]
+      row << [@id, @content, @author]
     end
   end
 
   def self.all
     all_comment = []
     CSV.read("./db/comment.csv").each do |csv_line|
-      all_comment << Comment.new(csv_line[0], csv_line[1])
+      all_comment << Comment.new(csv_line[0], csv_line[1], csv_line[2])
     end
     return all_comment
   end
@@ -27,7 +27,7 @@ class Comment
     arr = []
     self.all.each do |i|
       if i.id.to_i == id
-        arr << i.content
+        arr << [i.content, i.author]
       end
     end 
     return arr

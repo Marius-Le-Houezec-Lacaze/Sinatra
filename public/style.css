@@ -17,5 +17,64 @@ tfoot {
 
 body 
 {
-  background-color: lightcyan;
+  background-color: #ffffff;
+}
+
+.center 
+{
+  text-align: center;
+}
+
+a
+{
+  color: #202f5e;
+}
+
+form
+{
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  flex-direction: column;
+}
+
+input
+{
+  margin: 4px;
+  width: 100%;
+}
+
+.large 
+{
+  height: 100px;
+}
+
+form *
+{
+  margin-left: 0px;
+  margin-bottom: 4px;
+  border-style: solid;
+  padding: 10px;
+  border-color: lightgrey;
+}
+textarea:hover, input:hover
+{
+  background-color: ;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+.link 
+{
+  width: 25%;
+  padding-left: 0px;
+}
+
+p 
+{
+  width: 700px;
+  word-wrap: break-word;
 }
