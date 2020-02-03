@@ -3,7 +3,8 @@
 ## Pour lancer le site
 1. <code>git clone https://github.com/MariusLHL/Sinatra.git</code>
 2. <code>cd Sinatra</code>
-3. <code>shotgun -p 4645</code>
+3. <code>bundle install</code>
+4. <code>shotgun -p 4645</code>
 
 ## Pour Visiter le site
 <code>localhost:4645</code>
